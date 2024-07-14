@@ -18,9 +18,9 @@ function Header() {
       <div className="logo">Anbu Liyon</div>
       <div className="nav-links">
         <li className='a' onClick={()=>location.href='#about'}>About</li>
-        <li className='a'>Skills</li>
-        <li className='a'>Projects</li>
-        <li className='a'>Contact</li>
+        <li className='a' onClick={()=>location.href='#skills'}>Skills</li>
+        <li className='a' onClick={()=>location.href='#Projects'}>Projects</li>
+        <li className='a' onClick={()=>location.href='#contact'}>Contact</li>
       </div> 
       
     </nav>
@@ -33,10 +33,10 @@ function Header() {
           <span></span>
         </div>
         <div className="menu-links" onClick={toggle}>
-        <li className='a'>About</li>
-        <li className='a'>Skills</li>
-        <li className='a'>Projects</li>
-        <li className='a'>Contact</li>
+        <li className='a' onClick={()=>location.href='#about'}>About</li>
+        <li className='a' onClick={()=>location.href='#skills'}>Skills</li>
+        <li className='a' onClick={()=>location.href='#Projects'}>Projects</li>
+        <li className='a' onClick={()=>location.href='#contact'}>Contact</li>
       </div> 
       </div>
       

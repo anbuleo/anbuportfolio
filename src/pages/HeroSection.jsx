@@ -20,7 +20,7 @@ function HeroSection() {
         <p className="section_text_p2">MERN Stack Web Developer</p>
         <div className="btn-container">
             <button className='btn btn-ghost btn-outline' onClick={saveFile}>Download Resume</button>
-            <button className='btn btn-outline '>Contact Info</button>
+            <button className='btn btn-outline ' onClick={()=>location.href='#contact'}>Contact Info</button>
         </div>
         <div id="social-container">
            <i  className="fa-brands fa-linkedin icon fa-2xl" onClick={(e)=>{

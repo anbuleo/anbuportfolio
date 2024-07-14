@@ -78,7 +78,7 @@ function ProjectSection() {
 
     ]
   return <>
-    <section id="Projects">
+    <section id="Projects" className='project' >
         <p className="section_text_p1 text-center">Browse my Recent</p>
         <h1 className="title">Projects</h1>
         <div className="fullStack shadow-2xl">
@@ -98,8 +98,9 @@ function ProjectSection() {
         </div>
            })}
         </div>
+        <hr />
         <h2 className="title">Mini Projects</h2>
-        <h2 className="sub-title text-center">FrontEnd Projects</h2>
+        {/* <h2 className="sub-title text-center">FrontEnd Projects</h2> */}
         <div className="flex justify-around gap-4 flex-wrap">
            {frontEndData.map((e,i)=>{
             return  <div className="max-w-xs rounded overflow-hidden shadow-lg" key={i}>
@@ -117,7 +118,7 @@ function ProjectSection() {
         </div>
         </div>
         
-        <div className="icon"><i className="fa-solid fa-angles-down fa-xl" onClick={()=>location.href='#Projects'}></i></div> 
+        <div className="icon"><i className="fa-solid fa-angles-down fa-xl" onClick={()=>location.href='#contact'}></i></div> 
     </section>
   </>
 }
