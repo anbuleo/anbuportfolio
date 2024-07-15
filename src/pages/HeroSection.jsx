@@ -22,7 +22,7 @@ function HeroSection() {
             <button className='btn btn-ghost btn-outline' onClick={saveFile}>Download Resume</button>
             <button className='btn btn-outline ' onClick={()=>location.href='#contact'}>Contact Info</button>
         </div>
-        <div id="social-container">
+        {/* <div id="social-container">
            <i  className="fa-brands fa-linkedin icon fa-2xl" onClick={(e)=>{
             e.preventDefault()
             location.href="https://www.linkedin.com/in/anbu-liyon-068352284"
@@ -31,7 +31,7 @@ function HeroSection() {
             e.preventDefault()
             location.href="https://github.com/anbuleo"
            }}></i>
-        </div>
+        </div> */}
     </div>
   </section>
   
