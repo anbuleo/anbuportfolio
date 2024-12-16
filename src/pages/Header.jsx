@@ -13,8 +13,8 @@ function Header() {
 
   
   return <>
-  <header>
-    <nav id='desktop-nav'>
+  <header className=''>
+    <nav id='desktop-nav' className=' navbar' >
       <div className="logo">Anbu Liyon</div>
       <div className="nav-links">
         <li className='a' onClick={()=>location.href='#about'}>About</li>

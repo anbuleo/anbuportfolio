@@ -8,6 +8,10 @@ import notesappcon from '../assets/notesappcon.png'
 import noteappred from '../assets/noteappred.png'
 import fetchApp from '../assets/fetch.png'
 import dice from '../assets/dice.png'
+import colorchanger from '../assets/colorchanger.png'
+import infinitescroll from '../assets/imfinitescroll.png'
+import hit from '../assets/hit.png'
+import splitbox from '../assets/splitbox.png'
 
 function ProjectSection() {
 
@@ -74,7 +78,35 @@ function ProjectSection() {
             details: 'By using HTML,Css,javascript. this project is helps to understand DOM concept  ',
             deployedURL:' https://dice-game-basic.netlify.app/',
             gitHubURL:'https://github.com/anbuleo/Dice-game'
-        }
+        },
+        {
+            image:colorchanger,
+            title: 'Color Changer',
+            details: 'By using HTML,Css,javascript. this project is helps to understand DOM concept  ',
+            deployedURL:' https://colorchangerz.netlify.app/',
+            gitHubURL:'https://github.com/anbuleo/colorchangeusingjs'
+        },
+        {
+            image:infinitescroll,
+            title: 'Infinite scroll',
+            details: 'To understand concept of statemangement, and infinite scroll',
+            deployedURL:'https://anbuinfinitescroll.netlify.app/',
+            gitHubURL:'https://github.com/anbuleo/colorchangeusingjs'
+        },
+        {
+            image:hit,
+            title: 'Hit game',
+            details: 'To understand concept of statemangement, eventloop and callstack',
+            deployedURL:'https://anbuhitgame.netlify.app/',
+            gitHubURL:'https://github.com/anbuleo/hit'
+        },
+        {
+            image:splitbox,
+            title: 'Split box',
+            details: 'To understand concept of DOM manipulation, css flexbox,boxmodel ',
+            deployedURL:'https://anbusplitbox.netlify.app/',
+            gitHubURL:'https://github.com/anbuleo/splitbox'
+        },
 
     ]
   return <>
@@ -91,7 +123,7 @@ function ProjectSection() {
 <div class="font-bold text-xl mb-2 text-center">{e.title}</div>
 <p className="text-gray-700  text-sm">{e.details}</p>
 <div class="px-6 pt-4 pb-2 flex justify-between">    
-    <div className="btn btn-outline" onClick={()=>location.href=`${e.deployedURL}`}>Live Demo</div>
+    <div className="btn btn-outline"  onClick={()=>location.href=`${e.deployedURL}`}>Live Demo</div>
     <div className="btn btn-outline" onClick={()=>location.href=`${e.gitHubURL}`}>Source code</div>
  </div>
 </div>
