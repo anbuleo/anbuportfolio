@@ -1,7 +1,7 @@
 import React from 'react'
 import fileSaver from 'file-saver'
 import profilePic from '../assets/doodleProfilePic.png'
-import cv from '../assets/anbuliyonNewResume.pdf'
+import cv from '../assets/newcvs.pdf'
 import { Link, useNavigate } from 'react-router-dom'
 
 function HeroSection() {

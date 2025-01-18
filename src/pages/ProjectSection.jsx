@@ -12,6 +12,7 @@ import colorchanger from '../assets/colorchanger.png'
 import infinitescroll from '../assets/imfinitescroll.png'
 import hit from '../assets/hit.png'
 import splitbox from '../assets/splitbox.png'
+import leomobile from '../assets/leomobiles.png'
 
 function ProjectSection() {
 
@@ -34,6 +35,13 @@ function ProjectSection() {
             details: 'By using React, Bootstrap, mongoDB, nodeJS, Express etc..., user can create account the password is hashed and save to db, and Reset their password after otp verification ',
             deployedURL:'https://otpmanagercapone.netlify.app/',
             gitHubURL:'https://github.com/anbuleo/otp_manager'
+        }
+        ,{
+            image:leomobile,
+            title: 'Ecom web app',
+            details: 'By using React, Bootstrap, mongoDB, nodeJS, Express etc..., user can create account the password is hashed and save to db, payment integration also done ',
+            deployedURL:'https://leomobile.netlify.app',
+            gitHubURL:'https://github.com/anbuleo/Leomobiles'
         }
     ];
     let frontEndData = [

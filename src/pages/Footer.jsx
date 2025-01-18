@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return <>
-    <footer >
+    <footer className=''>
     <nav >
      
       <div className="nav-links">
