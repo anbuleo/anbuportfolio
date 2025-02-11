@@ -6,8 +6,8 @@ function SkillsSection() {
     <p className="section_text_p1 text-center">Explore My</p>
     <h1 className="title">Skills</h1>
     <div className="skills_container">
-        <div className="flex about-containers gap-4 ">
-            <div className="detail_container card shadow-2xl h-96 ">
+        <div className="flex about-containers gap-20 ">
+            <div className="detail_container card shadow-2xl  ">
                 <h2 className="sub_title text-center">Frontend Development</h2>
                 <div className="article_container">
                     <article>
@@ -54,7 +54,7 @@ function SkillsSection() {
                     </article>
                 </div>
             </div>
-            <div className="detail_container card shadow-2xl h-96">
+            <div className="detail_container card shadow-2xl ">
                 <h2 className="sub_title text-center">Backend Development</h2>
                 <div className="article_container">
                     <article>

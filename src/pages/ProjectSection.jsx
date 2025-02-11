@@ -13,6 +13,7 @@ import infinitescroll from '../assets/imfinitescroll.png'
 import hit from '../assets/hit.png'
 import splitbox from '../assets/splitbox.png'
 import leomobile from '../assets/leomobiles.png'
+import captionbiller from '../assets/captionbiller.png'
 
 function ProjectSection() {
 
@@ -30,11 +31,11 @@ function ProjectSection() {
             deployedURL:'https://leochatapp.onrender.com/login',
             gitHubURL:'https://github.com/anbuleo/ChatApp'
         },{
-            image:ResetPassword,
-            title: 'Reset Password',
-            details: 'By using React, Bootstrap, mongoDB, nodeJS, Express etc..., user can create account the password is hashed and save to db, and Reset their password after otp verification ',
-            deployedURL:'https://otpmanagercapone.netlify.app/',
-            gitHubURL:'https://github.com/anbuleo/otp_manager'
+            image:captionbiller,
+            title: 'caption biller',
+            details: 'Biller App is a web-based platform designed to manage billing, invoicing, and customer payments. It allows users to create, edit, and track invoices, monitor balances, and ensure accurate record-keeping for transactions. The app features secure user authentication and provides an intuitive UI for easy navigation. The backend handles data storage and processes all transactions, ensuring seamless operations for users',
+            deployedURL:'https://leobiller.netlify.app/',
+            gitHubURL:' https://github.com/anbuleo/captionBiller'
         }
         ,{
             image:leomobile,
@@ -115,6 +116,13 @@ function ProjectSection() {
             deployedURL:'https://anbusplitbox.netlify.app/',
             gitHubURL:'https://github.com/anbuleo/splitbox'
         },
+        {
+            image:ResetPassword,
+            title: 'Reset Password',
+            details: 'By using React, Bootstrap, mongoDB, nodeJS, Express etc..., user can create account the password is hashed and save to db, and Reset their password after otp verification ',
+            deployedURL:'https://otpmanagercapone.netlify.app/',
+            gitHubURL:'https://github.com/anbuleo/otp_manager'
+        }
 
     ]
   return <>
@@ -130,9 +138,10 @@ function ProjectSection() {
             <div class="px-6 py-4">
 <div class="font-bold text-xl mb-2 text-center">{e.title}</div>
 <p className="text-gray-700  text-sm">{e.details}</p>
-<div class="px-6 pt-4 pb-2 flex justify-between">    
-    <div className="btn btn-outline"  onClick={()=>location.href=`${e.deployedURL}`}>Live Demo</div>
-    <div className="btn btn-outline" onClick={()=>location.href=`${e.gitHubURL}`}>Source code</div>
+<div class="px-6 pt-4 pb-2 flex justify-between">   
+<a href={`${e.deployedURL}`} target="_blank" rel="noopener noreferrer"> 
+    <div className="btn btn-outline" >Live Demo</div></a>
+    <a href={`${e.gitHubURL}`} target="_blank" rel="noopener noreferrer"> <div className="btn btn-outline">Source code</div> </a>
  </div>
 </div>
         </div>
