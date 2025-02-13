@@ -1,14 +1,14 @@
 import React from 'react'
-import fileSaver from 'file-saver'
+// import fileSaver from 'file-saver'
 import profilePic from '../assets/doodleProfilePic.png'
 import cv from '../assets/newcvs.pdf'
 import { Link, useNavigate } from 'react-router-dom'
 
 function HeroSection() {
     // let navigate = useNavigate()
-    let saveFile = () =>{
-        fileSaver.saveAs(cv,'anbuliyonResume','anbuliyonResume')
-    }
+    // let saveFile = () =>{
+    //     fileSaver.saveAs(cv,'anbuliyonResume','anbuliyonResume')
+    // }
   return <>
   <section id="profile">
     <div className="sec_pic-container">
@@ -19,7 +19,7 @@ function HeroSection() {
         <h1 className="title">Anbu Liyon</h1>
         <p className="section_text_p2">MERN Stack Web Developer</p>
         <div className="btn-container">
-            <button className='btn btn-ghost btn-outline' onClick={saveFile}>Download Resume</button>
+            <a className='btn btn-ghost btn-outline' target='_blank' href='https://drive.google.com/file/d/10WINf_eJQa4dcVuEtm9uQlm5g1HQuAZ8/view?usp=sharing'>Resume</a>
             <button className='btn btn-outline ' onClick={()=>location.href='#contact'}>Contact Info</button>
         </div>
         {/* <div id="social-container">
