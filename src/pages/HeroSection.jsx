@@ -56,7 +56,7 @@ function HeroSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 href="/Anbu_Resume.pdf"
-                download="Anbu_Resume.pdf"
+                download="Anbuliyon - Full Stack MERN Developer Resume.pdf"
               >
                 Download Resume
               </a>
