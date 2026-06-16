@@ -1,42 +1,105 @@
 import FadeIn from '../components/FadeIn';
+import { Send, Mail, MapPin, Phone } from 'lucide-react';
 
 function ContactSection() {
   return (
     <section id="contact" className="py-24 relative z-10">
-      <div className="container mx-auto px-4 text-center">
-        <FadeIn direction="up" delay={0.1}>
-          <p className="text-lg text-white/70 font-medium tracking-wide">Get in touch</p>
-          <h2 className="text-4xl md:text-5xl font-black mt-2 mb-12 text-white">Contact Me</h2>
+      <div className="container mx-auto px-4 max-w-5xl">
+        <FadeIn direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient">Get In Touch</h2>
+            <p className="mt-4 text-foreground-muted text-lg max-w-2xl mx-auto">
+              Ready to start your next project? Let's build something amazing together.
+            </p>
+          </div>
         </FadeIn>
-        
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 max-w-2xl mx-auto">
-          {/* Email */}
-          <FadeIn direction="right" delay={0.2}>
-            <a 
-              href="mailto:anbuliyon@gmail.com" 
-              className="flex items-center gap-3 px-8 py-5 glass-card hover:bg-white/10 w-full md:w-auto hover:scale-105 transition-all duration-300"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span className="text-lg font-medium text-white/90">anbuliyon@gmail.com</span>
-            </a>
-          </FadeIn>
 
-          {/* LinkedIn */}
-          <FadeIn direction="left" delay={0.3}>
-            <a 
-              href="https://www.linkedin.com/in/anbu-liyon-068352284/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-5 glass-card hover:bg-white/10 w-full md:w-auto hover:scale-105 transition-all duration-300"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              <span className="text-lg font-medium text-white/90">LinkedIn</span>
-            </a>
-          </FadeIn>
+        <div className="grid md:grid-cols-5 gap-12">
+          {/* Contact Info */}
+          <div className="md:col-span-2 space-y-8">
+            <FadeIn direction="right" delay={0.1}>
+              <div className="glass-card p-6 flex items-start group">
+                <div className="p-3 bg-primary/10 rounded-xl mr-4 group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-1">Email</h4>
+                  <a href="mailto:anbuliyon@gmail.com" className="text-foreground-muted hover:text-primary transition-colors">
+                    anbuliyon@gmail.com
+                  </a>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="glass-card p-6 flex items-start group">
+                <div className="p-3 bg-secondary/10 rounded-xl mr-4 group-hover:bg-secondary/20 transition-colors">
+                  <Phone className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-1">Phone</h4>
+                  <p className="text-foreground-muted">9003241548</p>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.3}>
+              <div className="glass-card p-6 flex items-start group">
+                <div className="p-3 bg-accent/10 rounded-xl mr-4 group-hover:bg-accent/20 transition-colors">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-1">Location</h4>
+                  <p className="text-foreground-muted">Dharapuram, India</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Contact Form */}
+          <div className="md:col-span-3">
+            <FadeIn direction="left" delay={0.2}>
+              <div className="glass-card p-8">
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground-muted">Name</label>
+                      <input 
+                        type="text" 
+                        className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground-muted">Email</label>
+                      <input 
+                        type="email" 
+                        className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground-muted">Subject</label>
+                    <input 
+                      type="text" 
+                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                      placeholder="Project Inquiry"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground-muted">Message</label>
+                    <textarea 
+                      rows="4"
+                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+                      placeholder="Tell me about your project..."
+                    ></textarea>
+                  </div>
+                  <button className="w-full py-4 bg-primary hover:bg-primary-light text-white font-bold rounded-xl transition-all flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] group">
+                    Send Message <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </form>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>

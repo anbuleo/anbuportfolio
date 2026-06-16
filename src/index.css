@@ -9,28 +9,55 @@
 
 body {
   font-family: "Inter", sans-serif;
-  @apply bg-base-100 text-base-content;
+  @apply bg-background text-foreground;
+  overflow-x: hidden;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem; /* adjusted for floating navbar */
+  scroll-behavior: auto; /* Let Lenis handle smooth scroll */
+  scroll-padding-top: 6rem;
 }
 
 @layer utilities {
   .glass-panel {
-    @apply bg-base-100/40 backdrop-blur-md border-t border-l border-white/20 border-b border-r border-black/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    @apply bg-background-light/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
   }
   
   .glass-card {
-    @apply glass-panel rounded-2xl hover:bg-base-100/50 hover:shadow-[0_8px_32px_0_rgba(16,185,129,0.2)] hover:-translate-y-1 hover:border-t-primary/30 transition-all duration-300;
+    @apply glass-panel rounded-2xl hover:bg-background-light/60 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_8px_32px_0_rgba(99,102,241,0.2)] transition-all duration-500 ease-out;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
   }
 
   .bg-animated-gradient {
-    /* Dark slate with subtle emerald and deep gray shifts */
-    background: linear-gradient(-45deg, #0f172a, #064e3b, #1e293b, #022c22);
+    background: linear-gradient(-45deg, #0A0A0A, #111827, #0A0A0A, #1e1e2f);
     background-size: 400% 400%;
     @apply animate-gradient-xy;
   }
+
+  .aurora-bg {
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
+      radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    background-size: 100% 100%;
+  }
 }
 
+/* Custom Scrollbar for modern feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-primary/50 transition-colors;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-foreground font-bold tracking-tight;
+}

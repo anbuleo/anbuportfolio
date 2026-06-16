@@ -1,83 +1,109 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import { GithubIcon as Github, LinkedinIcon as Linkedin, TwitterIcon as Twitter } from '../components/Icons';
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggle = () => setIsOpen(!isOpen);
-
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#Projects' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'AI', href: '#ai-innovation' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <div className="fixed top-0 w-full z-50 flex justify-center pt-4 px-4 pointer-events-none">
-      <header 
-        className={`pointer-events-auto transition-all duration-500 w-full md:w-auto rounded-full glass-panel flex items-center justify-between px-6 py-3 ${
-          scrolled ? 'shadow-lg border-white/20' : 'border-transparent shadow-none'
-        }`}
-      >
-        <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
-            Anbu Liyon
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled ? 'py-4' : 'py-6'
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className={`flex items-center justify-between transition-all duration-500 rounded-full px-6 py-3 ${
+          scrolled ? 'glass-panel' : 'bg-transparent'
+        }`}>
+          {/* Logo */}
+          <a href="#" className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            Anbu.dev
           </a>
-        </div>
-        
-        {/* Desktop Menu */}
-        <div className="hidden md:flex ml-8">
-          <ul className="flex items-center gap-6 text-base font-medium">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a href={link.href} className="text-white/80 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all px-2 py-1 rounded-md">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden ml-4">
-          <button className="btn btn-square btn-ghost btn-sm text-white" onClick={toggle}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
-              {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              )}
-            </svg>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground-muted hover:text-white transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </a>
+            ))}
+          </nav>
+
+          {/* Socials & CTA */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="https://github.com/anbuleo" target="_blank" rel="noreferrer" className="text-foreground-muted hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://linkedin.com/in/anbuliyon" target="_blank" rel="noreferrer" className="text-foreground-muted hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="#contact" className="px-5 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-light rounded-full transition-colors shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+              Let's Talk
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-foreground hover:text-primary transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </header>
+      </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="pointer-events-auto absolute top-[80px] left-4 right-4 md:hidden glass-panel rounded-2xl shadow-xl border border-white/10 overflow-hidden">
-          <ul className="flex flex-col text-center text-lg py-4">
-            {navLinks.map((link) => (
-              <li key={link.name} className="border-b border-white/5 last:border-none">
-                <a 
-                  href={link.href} 
-                  className="block py-3 text-white/90 hover:text-primary hover:bg-white/10 transition-colors"
-                  onClick={() => setIsOpen(false)}
+      {/* Mobile Nav */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full p-4 md:hidden"
+          >
+            <div className="glass-card flex flex-col p-6 space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
 

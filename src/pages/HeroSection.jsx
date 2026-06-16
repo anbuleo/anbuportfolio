@@ -1,75 +1,69 @@
-import profilePic from '../assets/doodleProfilePic.png';
-import FadeIn from '../components/FadeIn';
 import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
+import { Download, ArrowRight } from 'lucide-react';
+import profilePic from '../assets/profilePic.jpg';
 
 function HeroSection() {
   return (
-    <section id="profile" className="relative min-h-[80vh] flex items-center justify-center py-12 lg:py-24 overflow-hidden">
-      {/* Background Blobs for Glass Depth */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob pointer-events-none"></div>
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-secondary/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000 pointer-events-none"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000 pointer-events-none"></div>
-
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10">
-        
-        {/* Profile Image */}
-        <FadeIn direction="right" delay={0.2}>
-          <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-[0_0_40px_rgba(16,185,129,0.3)] border-4 border-white/20">
-            <img 
-              src={profilePic} 
-              alt="Anbu Liyon Profile Pic" 
-              className="w-full h-full object-cover"
-              loading="lazy" 
+    <section id="hero" className="min-h-screen relative flex items-center pt-24 pb-12 z-10">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-medium text-sm">
+            Available for new opportunities
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Anbu Liyon</span>
+          </h1>
+          <h2 className="text-2xl md:text-3xl text-foreground-muted font-light mb-8 h-[40px]">
+            <Typewriter
+              words={[
+                'Full Stack Developer',
+                'MERN Stack Engineer',
+                'Node.js Backend Developer',
+                'AI Builder',
+                'SaaS Creator'
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
             />
+          </h2>
+          <p className="text-lg text-foreground-muted max-w-xl mb-10 leading-relaxed">
+            Building scalable web applications, automation systems, and AI-powered solutions.
+          </p>
+          
+          <div className="flex flex-wrap gap-4">
+            <a href="#projects" className="px-8 py-3 rounded-full bg-primary hover:bg-primary-light text-white font-medium transition-all shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)] flex items-center">
+              View Projects <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+            <a href="/src/assets/anbuliyonNewResume.pdf" download="Anbu_Liyon_Resume.pdf" className="px-8 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 text-white font-medium transition-all flex items-center">
+              <Download className="mr-2 w-5 h-5" /> Resume
+            </a>
           </div>
-        </FadeIn>
+        </motion.div>
 
-        {/* Text Content in Glass Panel */}
-        <FadeIn direction="left" delay={0.4}>
-          <div className="glass-panel rounded-3xl p-8 md:p-12 text-center md:text-left space-y-4 max-w-xl border-t-primary/30 relative overflow-hidden group">
-            {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            
-            <p className="text-lg md:text-xl font-medium text-white/80">Hello, I&apos;m</p>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white drop-shadow-md pb-2">Anbu Liyon</h1>
-            
-            <div className="text-xl md:text-2xl font-bold text-primary drop-shadow-sm h-8">
-              <Typewriter
-                words={['MERN Stack Web Developer', 'Full Stack Engineer', 'SaaS Architect', 'Problem Solver']}
-                loop={true}
-                cursor
-                cursorStyle='_'
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={2000}
-              />
-            </div>
-            
-            <p className="py-6 text-lg text-white/70 font-light leading-relaxed">
-              Passionate full-stack developer dedicated to crafting seamless, responsive, and highly premium digital experiences. I turn complex business problems into elegant, scalable solutions.
-            </p>
-            
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-              <a 
-                className="btn btn-primary rounded-full px-8 shadow-lg shadow-primary/30 border-none hover:shadow-primary/50 hover:scale-105 transition-all duration-300 font-bold" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                href="/Anbu_Resume.pdf"
-                download="Anbuliyon - Full Stack MERN Developer Resume.pdf"
-              >
-                Download Resume
-              </a>
-              <button 
-                className="btn btn-outline text-white hover:bg-white hover:text-base-100 border-white/50 rounded-full px-8 hover:scale-105 transition-all duration-300" 
-                onClick={() => location.href='#contact'}
-              >
-                Let&apos;s Connect
-              </button>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+          className="relative flex justify-center lg:justify-end"
+        >
+          {/* Animated rings around image */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full border border-secondary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+          
+          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_0_50px_rgba(99,102,241,0.3)] z-10 group">
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <img src={profilePic} alt="Anbu Liyon" className="w-full h-full object-cover" />
           </div>
-        </FadeIn>
-        
+        </motion.div>
       </div>
     </section>
   );
