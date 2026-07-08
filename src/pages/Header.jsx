@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { GithubIcon as Github, LinkedinIcon as Linkedin, TwitterIcon as Twitter } from '../components/Icons';
 
+import logo from '../assets/logo.png';
+
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,8 +40,8 @@ function Header() {
           scrolled ? 'glass-panel' : 'bg-transparent'
         }`}>
           {/* Logo */}
-          <a href="#" className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-            Anbu.dev
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="Anbu" className="h-8 w-auto object-contain hover:scale-105 transition-transform duration-300" />
           </a>
 
           {/* Desktop Nav */}

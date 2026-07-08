@@ -1,3 +1,4 @@
+import logo from '../assets/logo.png';
 import { GithubIcon as Github, LinkedinIcon as Linkedin, TwitterIcon as Twitter } from '../components/Icons';
 
 function Footer() {
@@ -8,8 +9,8 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2">
-            <a href="#" className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 inline-block">
-              Anbu.dev
+            <a href="#" className="mb-4 inline-block">
+              <img src={logo} alt="Anbu" className="h-8 w-auto object-contain hover:scale-105 transition-transform duration-300" />
             </a>
             <p className="text-foreground-muted max-w-sm">
               Building the future of web applications with modern architecture, elegant design, and artificial intelligence.
