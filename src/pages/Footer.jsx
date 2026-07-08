@@ -31,7 +31,7 @@ function Footer() {
               <a href="https://github.com/anbuleo" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-muted hover:bg-primary hover:text-white transition-all">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com/in/anbuliyon" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-muted hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.linkedin.com/in/anbu-liyon-068352284" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-muted hover:bg-primary hover:text-white transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground-muted hover:bg-primary hover:text-white transition-all">

@@ -63,7 +63,7 @@ function Header() {
             <a href="https://github.com/anbuleo" target="_blank" rel="noreferrer" className="text-foreground-muted hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/anbuliyon" target="_blank" rel="noreferrer" className="text-foreground-muted hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/anbu-liyon-068352284" target="_blank" rel="noreferrer" className="text-foreground-muted hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
             <a href="#contact" className="px-5 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-light rounded-full transition-colors shadow-[0_0_15px_rgba(99,102,241,0.5)]">
